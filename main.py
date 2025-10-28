@@ -25,3 +25,4 @@ class CoreSystem:
 
 atexit.register(CoreSystem.exitCleanup)
 CoreSystem.startUp()
+print("skibidi")
