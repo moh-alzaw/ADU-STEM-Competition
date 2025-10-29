@@ -75,15 +75,23 @@ function triggerExit() {
     let targetY = (hallway.offsetTop + hallway.offsetHeight / 2) / scene.clientHeight * 100;
 
     if (hallway.offsetWidth > hallway.offsetHeight) {
-      targetY = (hallway.offsetTop + 0.5 * hallway.offsetHeight) / scene.clientHeight * 100; 
+      targetY = (hallway.offsetTop + 0.5 * hallway.offsetHeight) / scene.clientHeight * 100;
     } else {
-      targetX = (hallway.offsetLeft + hallway.offsetWidth) / scene.clientWidth * 100; 
+      targetX = (hallway.offsetLeft + hallway.offsetWidth) / scene.clientWidth * 100;
     }
 
     targetX += (Math.random() - 0.5) * 5;
     targetY += (Math.random() - 0.5) * 5;
 
     person.finalTarget = {x: targetX, y: targetY};
+    person.currentTarget = pickRandomRoomPoint();
+  });
+}
+
+function resetHazard() {
+  people.forEach(person => {
+    person.state = "wandering";
+    person.finalTarget = null;
     person.currentTarget = pickRandomRoomPoint();
   });
 }
@@ -168,6 +176,26 @@ function initializeEventListeners() {
                 // If exiting fullscreen, retrigger resize handler
                 handleWindowResize();
             }
+        });
+    }
+
+    // Simulator action buttons
+    const action1Btn = document.getElementById('action-1');
+    const action2Btn = document.getElementById('action-2');
+
+    if (action1Btn) {
+        action1Btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            triggerExit();
+        });
+    }
+
+    if (action2Btn) {
+        action2Btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            resetHazard();
         });
     }
 }
