@@ -7,6 +7,7 @@ const hallways = [
 ];
 const people = [];
 const personSizePct = 3;
+var numOfPeople = 0;
 
 function createPerson(src) {
     const person = document.createElement("img");
@@ -25,6 +26,8 @@ function createPerson(src) {
     person.speed = 0.15 + Math.random() * 0.1;
 
     people.push(person);
+    numOfPeople++;
+    document.getElementById("people-count").textContent = numOfPeople;
     return person;
 }
 
@@ -220,6 +223,8 @@ function initializeEventListeners() {
             if (people.length > 1) {
                 const person = people.pop();
                 person.remove();
+                numOfPeople--;
+                document.getElementById("people-count").textContent = numOfPeople;
             }
         });
     }
@@ -282,3 +287,4 @@ if (document.readyState === 'loading') {
     handleWindowResize();
     window.addEventListener('resize', handleWindowResize);
 }
+
