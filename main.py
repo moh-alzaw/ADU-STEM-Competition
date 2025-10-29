@@ -37,6 +37,12 @@ class Room:
         self.current_capacity = current_capacity
         self.maximum_capacity = maximum_capacity
 
+class Person:
+    def __init__(self, position, location, room, state):
+        self.position = position
+        self.location = location
+        self.room = room
+        self.state = state
 
 class Hazard:
     def __init__ (self, location, room, type, status): ## type is fire type
@@ -44,4 +50,3 @@ class Hazard:
         self.room = room
         self.type = type
         self.status = status
-
