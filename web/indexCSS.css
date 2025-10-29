@@ -1,0 +1,60 @@
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.stats-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    left: 40px;
+}
+
+.stat-item {
+    text-align: left;
+}
+
+.stat-item h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.stat-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #4CAF50;
+}
+
+#hazards-count {
+    color: #FF4444;
+}
+
+.room-display {
+    width: 800px;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}

@@ -21,7 +21,32 @@ class CoreSystem:
         if not (os.path.exists(userdataDirectory)):
             os.makedirs(userdataDirectory)
         eel.start("index.html", size=(800, 700), cmdline_args=["--disable-extensions", '--user-data-dir={}'.format(userdataDirectory)])
-            
 
 atexit.register(CoreSystem.exitCleanup)
 CoreSystem.startUp()
+
+#start here
+
+exit1_position = ()
+exit2_position = ()
+exit3_position = ()
+
+class Room:
+    def __init__(self, name, current_capacity, maximum_capacity):
+        self.name = name
+        self.current_capacity = current_capacity
+        self.maximum_capacity = maximum_capacity
+
+class Person:
+    def __init__(self, position, location, room, state):
+        self.position = position
+        self.location = location
+        self.room = room
+        self.state = state
+
+class Hazard:
+    def __init__ (self, location, room, type, status): ## type is fire type
+        self.location = location
+        self.room = room
+        self.type = type
+        self.status = status
