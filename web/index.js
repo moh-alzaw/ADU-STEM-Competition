@@ -198,9 +198,34 @@ function initializeEventListeners() {
             resetHazard();
         });
     }
+
+    // Increase and Decrease People buttons
+    const action3Btn = document.getElementById('action-3');
+    const action4Btn = document.getElementById('action-4');
+
+    if (action3Btn) {
+        action3Btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // Add code here to increase people
+            createPerson("Assets/Person.svg");
+        });
+    }
+
+    if (action4Btn) {
+        action4Btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // Add code here to decrease people
+            if (people.length > 1) {
+                const person = people.pop();
+                person.remove();
+            }
+        });
+    }
 }
 
-// Responsive resize handler for desktop app
+// Fix from stack overflow
 function handleWindowResize() {
     const roomDisplay = document.querySelector('.room-display');
     const statsPanel = document.querySelector('.stats-panel');
@@ -210,22 +235,18 @@ function handleWindowResize() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
-    // Get actual stats panel position and width
     const statsPanelRect = statsPanel.getBoundingClientRect();
     const statsPanelLeft = statsPanelRect.left; // Actual left position
     const statsPanelRight = statsPanelRect.right; // Actual right edge
     const minRightSpace = 60; // Right margin
 
-    // Calculate available width for room display (from right edge of stats panel to right edge of window minus margin)
     const availableWidth = windowWidth - statsPanelRight - minRightSpace;
     const availableHeight = windowHeight - 200; // Top and bottom margin
 
-    // Calculate scale factor based on available space
     const scaleWidth = Math.min(1, availableWidth / 800);
     const scaleHeight = Math.min(1, availableHeight / 500);
     const scale = Math.min(scaleWidth, scaleHeight);
 
-    // Apply scaling to room display with proper constraints
     const newWidth = Math.max(300, 800 * scale);
     const newHeight = Math.max(250, 500 * scale);
 

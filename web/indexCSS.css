@@ -69,10 +69,8 @@ html {
     gap: 40px;
     position: absolute;
     left: 40px;
-    top: 100px;
     bottom: 150px;
     height: auto;
-    justify-content: space-between;
 }
 
 /* Vertical hallway below the room */
@@ -121,6 +119,10 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: fixed;
+    top: 100px;
+    left: 40px;
+    z-index: 10;
 }
 
 .stats-grid {
