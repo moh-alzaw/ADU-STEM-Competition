@@ -7,7 +7,6 @@
   border: 2px solid black;
 }
 
-/* Main room */
 #room {
   position: absolute;
   top: 25%;
@@ -18,19 +17,17 @@
   z-index: 1;
 }
 
-/* Hallways visually connected to room edges */
 .hallway {
   position: absolute;
   background-color: #bbb;
   z-index: 0;
 }
 
-/* Horizontal hallway to the right of the room */
 #hallway3 {
   top: 42.5%; /* aligned vertically center of room */
   left: 75%;  /* start at right edge of room */
   width: 25%; /* extend out */
-  height: 15%; /* same height as room/4 */
+  height: 15%;
 }
 
 /* Vertical hallway below the room */
