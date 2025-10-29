@@ -247,7 +247,7 @@ html {
 
 .bottom-buttons {
     position: absolute;
-    bottom: 40px;
+    bottom: 80px;
     right: 40px;
     display: flex;
     gap: 15px;
