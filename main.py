@@ -27,6 +27,19 @@ CoreSystem.startUp()
 
 #start here
 
+class Exit:
+    total_current_capacity = 0
+
+    def __init__ (self, name, current_capacity, maximum_capacity, people_leaving, people_entering):
+        self.name = name
+        self.current_capacity = current_capacity
+        self.maximum_capacity = maximum_capacity
+        self.people_leaving = people_leaving
+        self.people_entering = people_entering
+        Exit.total_current_capacity += current_capacity
+
+
+
 exit1_position = ()
 exit2_position = ()
 exit3_position = ()
