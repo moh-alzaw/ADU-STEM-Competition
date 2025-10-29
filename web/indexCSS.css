@@ -1,60 +1,59 @@
-.header {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
+#scene {
+  position: relative;
+  width: 80vw;
+  height: 60vh;
+  margin: 2vh auto;
+  background-color: #f0f0f0;
+  border: 2px solid black;
 }
 
-.title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 0;
-    color: white;
+/* Main room */
+#room {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: #ddd;
+  z-index: 1;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    position: relative;
+/* Hallways visually connected to room edges */
+.hallway {
+  position: absolute;
+  background-color: #bbb;
+  z-index: 0;
 }
 
-.stats-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    position: absolute;
-    left: 40px;
+/* Horizontal hallway to the right of the room */
+#hallway3 {
+  top: 42.5%; /* aligned vertically center of room */
+  left: 75%;  /* start at right edge of room */
+  width: 25%; /* extend out */
+  height: 15%; /* same height as room/4 */
 }
 
-.stat-item {
-    text-align: left;
+/* Vertical hallway below the room */
+#hallway2 {
+  top: 75%; /* start at bottom edge of room */
+  left: 50%; /* aligned horizontally center of room */
+  width: 12.5%; /* small width */
+  height: 25%; /* extend downward */
 }
 
-.stat-item h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: white;
+/* Vertical hallway above the room */
+#hallway1 {
+  top: 0%; /* start at top of scene */
+  left: 50%; /* aligned horizontally center of room */
+  width: 12.5%;
+  height: 25%; /* extend downward toward room */
 }
 
-.stat-value {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin: 0;
-    color: #4CAF50;
-}
-
-#hazards-count {
-    color: #FF4444;
-}
-
-.room-display {
-    width: 800px;
-    height: 500px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+/* People */
+.person {
+  position: absolute;
+  width: 3%;
+  height: auto;
+  transition: top 0.5s ease, left 0.5s ease;
+  z-index: 2;
 }
