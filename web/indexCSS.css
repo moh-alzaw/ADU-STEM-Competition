@@ -29,6 +29,40 @@
   width: 25%; /* extend out */
   height: 15%;
 }
+.top-right-text {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.top-right-text p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.stats-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    left: 40px;
+    top: 100px;
+    bottom: 150px;
+    height: auto;
+    justify-content: space-between;
+}
 
 /* Vertical hallway below the room */
 #hallway2 {
@@ -53,4 +87,269 @@
   height: auto;
   transition: top 0.5s ease, left 0.5s ease;
   z-index: 2;
+}
+.stat-item h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.stat-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #4CAF50;
+}
+
+#hazards-count {
+    color: #FF4444;
+}
+
+.simulator-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.exits-occupancy-section {
+    margin-top: 5px;
+}
+
+.exits-occupancy-section h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+.exits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.simulator-info-header {
+    margin-bottom: 0;
+}
+
+.simulator-info-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.simulator-actions {
+    margin-bottom: 0;
+}
+
+.simulator-actions h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.action-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 50px;
+}
+
+.simulator-btn {
+    background-color: #333333;
+    color: white;
+    border: 2px solid #555555;
+    padding: 20px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Commissioner', sans-serif;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+}
+
+.simulator-btn:hover {
+    background-color: #555555;
+    border-color: #777777;
+}
+
+.room-display {
+    width: 800px;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.room-display.fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    z-index: 999 !important;
+    transform: none !important;
+}
+
+.fullscreen-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(51, 51, 51, 0.9);
+    border: 2px solid rgba(85, 85, 85, 0.9);
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    z-index: 1000;
+}
+
+.fullscreen-btn:hover {
+    background-color: rgba(85, 85, 85, 0.9);
+    border-color: rgba(119, 119, 119, 0.9);
+}
+
+.fullscreen-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom-buttons {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.action-btn {
+    background-color: #333333;
+    color: white;
+    border: 2px solid #555555;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Commissioner', sans-serif;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #555555;
+    border-color: #777777;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #2a2a2a;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.credits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.credits-list li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #444444;
+    color: white;
+}
+
+.credits-list li:last-child {
+    border-bottom: none;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #999999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.close:hover {
+    color: white;
 }

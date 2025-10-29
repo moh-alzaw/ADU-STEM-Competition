@@ -23,6 +23,86 @@
   <div class="hallway" id="hallway2"></div>
   <div class="hallway" id="hallway3"></div>
 </div>
+    <div class="header">
+        <h1 class="title">Room Occupancy System</h1>
+    </div>
+
+    <div class="top-right-text">
+        <p>ADU STEM Competition 2025</p>
+    </div>
+
+    <div class="container">
+        <div class="stats-panel">
+            <div class="simulator-info-section">
+                <div class="simulator-info-header">
+                    <h3>Simulator Information</h3>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h2>People</h2>
+                        <p class="stat-value" id="people-count">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>Exits</h2>
+                        <p class="stat-value" id="exits-count">0</p>
+                    </div>
+                </div>
+                <div class="exits-occupancy-section">
+                    <h4>Exits Occupancy</h4>
+                    <div class="exits-grid">
+                        <div class="stat-item">
+                            <h2>Exit 1</h2>
+                            <p class="stat-value" id="exit-1-occupancy">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <h2>Exit 2</h2>
+                            <p class="stat-value" id="exit-2-occupancy">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <h2>Exit 3</h2>
+                            <p class="stat-value" id="exit-3-occupancy">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="simulator-actions">
+                <h3>Simulator Actions</h3>
+                <div class="action-buttons-grid">
+                    <button class="simulator-btn" id="action-1">Start Hazard</button>
+                    <button class="simulator-btn" id="action-2">Stop Hazard</button>
+                    <button class="simulator-btn" id="action-3">Increase People (+1)</button>
+                    <button class="simulator-btn" id="action-4">Decrease People (-1)</button>
+                </div>
+            </div>
+        </div>
+        <div class="room-display">
+            <button class="fullscreen-btn" id="fullscreen-btn" title="Fullscreen">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <!-- Room content will go here -->
+        </div>
+
+        <div class="bottom-buttons">
+            <button class="action-btn" id="credits-btn">[Credits]</button>
+            <button class="action-btn" id="github-btn">[Github]</button>
+        </div>
+    </div>
+    <!-- Credits Modal -->
+    <div class="modal" id="credits-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Credits</h2>
+            <ul class="credits-list">
+                <li>Mohammed Alzwaheri</li>
+                <li>Khaled Fathi</li>
+                <li>Omar</li>
+                <li>Zaid</li>
+                <li>Khalifa</li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 <script>
